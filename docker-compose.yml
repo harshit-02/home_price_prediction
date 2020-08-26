@@ -1,0 +1,22 @@
+
+version: "3"
+
+services:
+  service-1:
+    build: ./service_1
+    image: service-1
+    container_name: service-1
+    expose:
+      - 8080
+    ports:
+      - 8080:8080
+
+  
+  nginx:
+    build: ./nginx
+    image: nginx
+    container_name: nginx
+    expose:
+      - 80
+    ports: 
+      - 80:80
