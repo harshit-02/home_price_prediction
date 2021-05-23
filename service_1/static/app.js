@@ -27,8 +27,8 @@ function onClickedEstimatePrice() {
   var estPrice = document.getElementById("uiEstimatedPrice");
   console.log("Values recorded as: ",sqft.value, bhk, bathrooms, location.value);
 
-  //var url = "http://service-1:8080/predict_home_price"; //Use this if you are NOT using nginx which is first 7 tutorials
-  var url = "/api/predict_home_price"; // Use this if  you are using nginx. i.e tutorial 8 and onwards
+  //var url = "http://service-1:8080/predict_home_price"; 
+  var url = "/api/predict_home_price"; 
 
   $.post(url, {
       total_sqft: parseFloat(sqft.value),
@@ -44,8 +44,8 @@ function onClickedEstimatePrice() {
 
 function onPageLoad() {
   console.log( "document loaded" );
-  //var url = "http://service-1:8080/get_location_names"; // Use this if you are NOT using nginx which is first 7 tutorials
-  var url = "/api/get_location_names"; // Use this if  you are using nginx. i.e tutorial 8 and onwards
+  //var url = "http://service-1:8080/get_location_names"; // Use this if you are NOT using nginx 
+  var url = "/api/get_location_names"; // Use this if  you are using nginx
   $.get(url,function(data, status) {
       console.log("got response for get_location_names request");
       if(data) {
